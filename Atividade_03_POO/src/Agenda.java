@@ -1,0 +1,43 @@
+public class Agenda 
+{
+    private String data;
+    private String hora;
+    private Médico medico;
+    private Paciente paciente;
+
+    public Agenda(){}
+
+    public Agenda(String data, String hora, Médico medico, Paciente paciente)
+    {
+        this.data = data;
+        this.hora = hora;
+        this.medico = medico;
+        this.paciente = paciente;
+    }
+
+    public String getData(){ return data; }
+    public void setData(String data){ this.data = data; }
+
+    public String getHora(){ return hora; }
+    public void setHora(String hora){ this.hora = hora; }
+
+    public Médico getMedico(){ return medico; }
+    public void setMedico(Médico medico){ this.medico = medico; }
+
+    public Paciente getPaciente(){ return paciente; }
+    public void setPaciente(Paciente paciente){ this.paciente = paciente; }
+
+    public void consultar()
+    {
+        mostrar();
+    }
+
+    public void mostrar()
+    {
+        System.out.println("Agenda:");
+        System.out.println("Data: " + data);
+        System.out.println("Hora: " + hora);
+        System.out.println("Médico: " + (medico != null ? medico.getNome() : "Não informado"));
+        System.out.println("Paciente: " + (paciente != null ? paciente.getNome() : "Não informado"));
+    }
+}
