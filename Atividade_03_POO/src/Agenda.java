@@ -1,43 +1,57 @@
-public class Agenda 
-{
+public class Agenda {
+
     private String data;
     private String hora;
-    private Médico medico;
+    private Medico medico;
     private Paciente paciente;
 
-    public Agenda(){}
-
-    public Agenda(String data, String hora, Médico medico, Paciente paciente)
-    {
-        this.data = data;
-        this.hora = hora;
-        this.medico = medico;
-        this.paciente = paciente;
+    public Agenda(){
+        try{
+            data = "01/01/2000";
+            hora = "00:00";
+        }catch(Exception e){
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+        }
     }
 
-    public String getData(){ return data; }
-    public void setData(String data){ this.data = data; }
+    public Agenda(String data,String hora,Medico medico,Paciente paciente){
+        try{
+            this.data=data;
+            this.hora=hora;
+            this.medico=medico;
+            this.paciente=paciente;
+        }catch(Exception e){
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.data="01/01/2000";
+            this.hora="00:00";
+        }
+    }
 
-    public String getHora(){ return hora; }
-    public void setHora(String hora){ this.hora = hora; }
+    public void setData(String data){
+        try{ this.data=data; }
+        catch(Exception e){
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.data="01/01/2000";
+        }
+    }
 
-    public Médico getMedico(){ return medico; }
-    public void setMedico(Médico medico){ this.medico = medico; }
+    public void setHora(String hora){
+        try{ this.hora=hora; }
+        catch(Exception e){
+            System.out.println("Ocorreu uma exceção – Valores padrões definidos");
+            this.hora="00:00";
+        }
+    }
 
-    public Paciente getPaciente(){ return paciente; }
-    public void setPaciente(Paciente paciente){ this.paciente = paciente; }
-
-    public void consultar()
-    {
+    public void consultar(){
         mostrar();
     }
 
-    public void mostrar()
-    {
+    public void mostrar(){
         System.out.println("Agenda:");
-        System.out.println("Data: " + data);
-        System.out.println("Hora: " + hora);
-        System.out.println("Médico: " + (medico != null ? medico.getNome() : "Não informado"));
-        System.out.println("Paciente: " + (paciente != null ? paciente.getNome() : "Não informado"));
+        System.out.println("Data: "+data);
+        System.out.println("Hora: "+hora);
+        System.out.println("Médico: "+(medico!=null?medico.getNome():"Não informado"));
+        System.out.println("Paciente: "+(paciente!=null?paciente.getNome():"Não informado"));
     }
 }

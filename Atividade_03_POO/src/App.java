@@ -6,7 +6,7 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        Médico medicoA = new Médico(
+        Medico medicoA = new Medico(
             "João",
             "CRM/SP 000001",
             "+55 11 00000-0001",
